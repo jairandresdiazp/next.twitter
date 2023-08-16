@@ -29,7 +29,6 @@ export function AuthButtonClient ({ session }: { session: Session | null }) {
             )
           : <button onClick={handleSignOut}>Sign out</button>
       }
-      <button onClick={handleSignOut}>Sign out</button>
     </header>
   )
 }
