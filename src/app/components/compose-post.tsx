@@ -21,7 +21,7 @@ export function ComposePost ({
         <textarea
           name='content'
           rows={4}
-          className='w-full text-xl bg-slate-50 dark:bg-[#0d1117] placeholder-gray-500 text-default-600 p-2'
+          className='w-full text-xl bg-slate-50 dark:bg-[#0d1117] placeholder-gray-500 text-default-600 p-2 border-none outline-none'
           placeholder='¡¿Qué está pasando!?'
         ></textarea>
         <ComposePostButton />
