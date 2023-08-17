@@ -2,7 +2,9 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import * as React from 'react'
-import { Providers } from './providers'
+import { NextUiProvider } from '@/app/providers/next-ui'
+import { ThemeProvider } from '@/app/providers/theme'
+import { ThemeSwitcher } from '@/app/components/dark-mode-switcher'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,11 +19,14 @@ export default function RootLayout ({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`dark ${inter.className}`} >
-      <body>
-        <Providers>
-          {children}
-        </Providers>
+    <html lang="en" >
+      <body className={`${inter.className} bg-slate-50 dark:bg-[#0d1117]`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NextUiProvider>
+            <ThemeSwitcher />
+            {children}
+          </NextUiProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

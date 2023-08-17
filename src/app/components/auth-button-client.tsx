@@ -1,7 +1,7 @@
 'use client'
 
 import { type Session, createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { GitHubIcon } from './icons'
+import { GitHubIcon } from '@/app/components/icons'
 import { useRouter } from 'next/navigation'
 
 export function AuthButtonClient ({ session }: { session: Session | null }) {

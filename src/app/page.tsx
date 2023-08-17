@@ -3,8 +3,8 @@ import { cookies } from 'next/headers'
 import { AuthButtonServer } from '@/app/components/auth-button-server'
 import { redirect } from 'next/navigation'
 import { PostLists } from '@/app/components/posts-list'
-import { type Database } from './types/database'
-import { ComposePost } from './components/compose-post'
+import { type Database } from '@/app/types/database'
+import { ComposePost } from '@/app/components/compose-post'
 
 export default async function Home () {
   const supabase = createServerComponentClient<Database>({ cookies })
