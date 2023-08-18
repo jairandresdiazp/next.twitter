@@ -20,7 +20,7 @@ export default function PostCard ({
       <div className="justify-between">
         <div className="flex gap-x-2">
           <Link href={`/profile/${userName}`}>
-            <Image className='inline-block h-10 w-10 rounded-full' src={avatarUrl} alt='profile' width={100} height={100} />
+            <Image className='inline-block h-10 w-10 rounded-full' src={avatarUrl} alt={userName} width={100} height={100} />
           </Link>
           <div className="flex flex-col gap-1 items-start justify-center">
             <h4 className="text-small font-semibold leading-none text-default-600">{user}</h4>
@@ -34,13 +34,13 @@ export default function PostCard ({
         </p>
       </div>
       <div className="px-3 gap-3 flex w-full">
-        <button>
+        <button role='button' name='mensajes'>
           <IconMessageCircle className='w-4 h-4' />
         </button>
-        <button>
+        <button role='button' name='likes'>
           <IconHeart className='w-4 h-4' />
         </button>
-        <button>
+        <button role='button' name='rt'>
           <IconRepeat className='w-4 h-4' />
         </button>
       </div>

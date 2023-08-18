@@ -4,7 +4,7 @@ const nextConfig = {
     serverActions: true
   },
   typescript: {
-    ignoreBuildErrors: true
+    ignoreBuildErrors: false
   },
   images: {
     remotePatterns: [
