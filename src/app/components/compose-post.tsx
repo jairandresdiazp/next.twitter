@@ -14,8 +14,9 @@ export function ComposePost ({
   const [value, setValue] = useState<string>('')
 
   useEffect(() => {
+    if (textAreaRef.current == null) return
     textAreaRef.current.style.height = 'auto'
-    textAreaRef.current.style.height = textAreaRef?.current?.scrollHeight + 'px'
+    textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`
   }, [value])
 
   const onChange = (e: any) => {
@@ -23,8 +24,8 @@ export function ComposePost ({
   }
 
   return (
-    <form action={async (formData) => {
-      await addPost(formData)
+    <form action={async (data) => {
+      await addPost(data)
       setValue('')
     }} className='flex flex-row p-3 border-b border-white/20'>
       <Image className='inline-block h-10 w-10 rounded-full' src={userAvatarUrl} alt='profile' width={100} height={100} />
