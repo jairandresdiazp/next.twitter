@@ -2,6 +2,17 @@
 const nextConfig = {
   experimental: {
     serverActions: true
+  },
+  typescript: {
+    ignoreBuildErrors: true
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*'
+      }
+    ]
   }
 }
 

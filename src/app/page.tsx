@@ -14,7 +14,7 @@ export default async function Home () {
     redirect('/login')
   }
 
-  const { data: posts } = await supabase.from('post').select('*, user(name,avatar_url, user_name)').order('created_at', { ascending: false })
+  const { data: posts } = await supabase.from('post').select('*, user(*)').order('created_at', { ascending: false })
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

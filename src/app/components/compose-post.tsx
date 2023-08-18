@@ -3,6 +3,7 @@
 import { ComposePostButton } from '@/app/components/compose-post-button'
 import { addPost } from '@/app/actions/add-post-action'
 import { useRef } from 'react'
+import Image from 'next/image'
 
 export function ComposePost ({
   userAvatarUrl
@@ -16,12 +17,13 @@ export function ComposePost ({
       await addPost(formData)
       formRef.current?.reset()
     }} className='flex flex-row p-3 border-b border-white/20'>
-      <img className='rounded-full w-10 h-10 object-contain mr-4' src={userAvatarUrl} />
-      <div className='flex flex-1 flex-col gap-y-4'>
+      <Image className='inline-block h-10 w-10 rounded-full' src={userAvatarUrl} alt='profile' width={100} height={100} />
+      <div className='flex flex-1 flex-col gap-y-4 pl-2'>
         <textarea
           name='content'
-          rows={4}
-          className='w-full text-xl bg-slate-50 dark:bg-[#0d1117] placeholder-gray-500 text-default-600 p-2 border-none outline-none'
+          rows={2}
+          cols={50}
+          className= 'bg-transparent text-gray-400 font-medium text-lg w-full border-none outline-none resize-none'
           placeholder='¡¿Qué está pasando!?'
         ></textarea>
         <ComposePostButton />

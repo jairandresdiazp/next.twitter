@@ -4,8 +4,8 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 export const dymanic = 'force-dymanic'
 
-export async function GET (ctx: NextRequest) {
-  const requestURL = new URL(ctx.url)
+export async function GET (request: NextRequest) {
+  const requestURL = new URL(request.url)
   const code = requestURL.searchParams.get('code')
   if (code != null) {
     const supabase = createRouteHandlerClient({ cookies })
