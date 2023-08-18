@@ -4,7 +4,6 @@ import { Inter } from 'next/font/google'
 import * as React from 'react'
 import { NextUiProvider } from '@/app/providers/next-ui'
 import { ThemeProvider } from '@/app/providers/theme'
-import { ThemeSwitcher } from '@/app/components/dark-mode-switcher'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +22,6 @@ export default function RootLayout ({
       <body className={`${inter.className} bg-slate-50 dark:bg-[#0d1117]`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NextUiProvider>
-            <ThemeSwitcher />
             {children}
           </NextUiProvider>
         </ThemeProvider>

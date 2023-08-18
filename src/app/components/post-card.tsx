@@ -28,7 +28,7 @@ export default function PostCard ({
           </div>
         </div>
       </div>
-      <div className="p-3 text-xs bg-transparent">
+      <div className="p-3 text-xs bg-transparent break-words leading-5">
         <p className='text-default-600'>
           {content}
         </p>

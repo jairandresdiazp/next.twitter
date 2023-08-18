@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation'
 import { PostLists } from '@/app/components/posts-list'
 import { type Database } from '@/app/types/database'
 import { ComposePost } from '@/app/components/compose-post'
+import { ThemeSwitcher } from '@/app/components/dark-mode-switcher'
 
 export default async function Home () {
   const supabase = createServerComponentClient<Database>({ cookies })
@@ -22,7 +23,10 @@ export default async function Home () {
         <ComposePost userAvatarUrl={session?.user?.user_metadata?.avatar_url} />
         <PostLists posts={posts} />
       </section>
-      <AuthButtonServer />
+      <section className="flex justify-center w-full mt-2">
+        <ThemeSwitcher />
+        <AuthButtonServer />
+      </section>
     </main>
   )
 }
