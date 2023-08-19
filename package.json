@@ -1,6 +1,6 @@
 {
   "name": "next.twitter",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,28 +14,20 @@
     "@supabase/auth-helpers-nextjs": "^0.7.4",
     "@supabase/supabase-js": "^2.32.0",
     "@tabler/icons-react": "^2.30.0",
+    "autoprefixer": "10.4.15",
+    "encoding": "^0.1.13",
+    "next": "13.4.16",
+    "next-themes": "^0.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "postcss": "8.4.28",
+    "tailwindcss": "3.3.3",
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.15",
-    "encoding": "^0.1.13",
-    "eslint-config-next": "13.4.16",
-    "framer-motion": "^10.16.0",
-    "next": "13.4.16",
-    "next-themes": "^0.2.1",
-    "postcss": "8.4.28",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3"
-  },
-  "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "eslint": "8.47.0",
-    "eslint-config-standard-with-typescript": "^37.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.33.1",
     "typescript": "5.1.6"
   }
 }
