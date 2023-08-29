@@ -3,7 +3,7 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import { Database } from '@/app/types/database';
 
-export const dymanic = 'force-dymanic';
+export const dynamic = 'force-dynamic';
 
 export async function GET(
   req: NextRequest,

@@ -2,7 +2,7 @@ import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 
-export const dymanic = 'force-dymanic';
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   const requestURL = new URL(request?.url || '');
