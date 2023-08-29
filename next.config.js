@@ -1,19 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    serverActions: true
+    serverActions: true,
   },
   typescript: {
-    ignoreBuildErrors: false
+    ignoreBuildErrors: false,
   },
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '*'
-      }
-    ]
-  }
-}
+        hostname: '*',
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

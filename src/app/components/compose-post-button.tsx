@@ -1,17 +1,17 @@
-'use client'
+'use client';
 
-import { experimental_useFormStatus as useFormStatus } from 'react-dom'
+import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 
-export function ComposePostButton () {
-  const { pending } = useFormStatus()
+export function ComposePostButton() {
+  const { pending } = useFormStatus();
 
   return (
     <button
       disabled={pending}
-      type='submit'
-      className='bg-sky-500 text-sm disabled:opacity-40 disabled:pointer-events-none font-bold rounded-full px-5 py-2 self-end'
+      type="submit"
+      className="self-end rounded-full bg-sky-500 px-5 py-2 text-sm font-bold disabled:pointer-events-none disabled:opacity-40"
     >
       {pending ? 'Posteando...' : 'Postear'}
     </button>
-  )
+  );
 }

@@ -1,20 +1,22 @@
-'use server'
+'use server';
 
-import { cookies } from 'next/headers'
-import { createServerActionClient } from '@supabase/auth-helpers-nextjs'
-import { revalidatePath } from 'next/cache'
+import { cookies } from 'next/headers';
+import { createServerActionClient } from '@supabase/auth-helpers-nextjs';
+import { revalidatePath } from 'next/cache';
 
 export const addPost = async (data: FormData) => {
-  const content = data.get('content')
+  const content = data.get('content');
 
-  if (content === null) return
+  if (content === null) return;
 
-  const supabase = createServerActionClient({ cookies })
+  const supabase = createServerActionClient({ cookies });
 
-  const { data: { user } } = await supabase.auth.getUser()
-  if (user === null) return
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (user === null) return;
 
-  await supabase.from('post').insert({ content, user_id: user.id })
+  await supabase.from('post').insert({ content, user_id: user.id });
 
-  revalidatePath(`/?content=${content.toString()}`)
-}
+  revalidatePath(`/?content=${content.toString()}`);
+};
