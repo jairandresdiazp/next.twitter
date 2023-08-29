@@ -5,6 +5,7 @@ import { Database } from '@/app/types/database';
 
 export const dymanic = 'force-dymanic';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function GET(req: NextRequest) {
   const supabase = createServerComponentClient<Database>({ cookies });
   const {
