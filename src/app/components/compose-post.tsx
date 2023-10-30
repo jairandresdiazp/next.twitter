@@ -15,16 +15,18 @@ export function ComposePost({ userAvatarUrl }: { userAvatarUrl: string }) {
     textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`;
   }, [value]);
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.target.value);
   };
 
+  const onSubmit = async (data: FormData) => {
+    await addPost(data);
+    setValue('');
+  }
+
   return (
     <form
-      action={async (data) => {
-        await addPost(data);
-        setValue('');
-      }}
+      action={(data) => onSubmit(data)}
       className="flex flex-row border-b border-white/20 p-3"
     >
       <Image
@@ -41,7 +43,7 @@ export function ComposePost({ userAvatarUrl }: { userAvatarUrl: string }) {
           rows={2}
           cols={50}
           value={value}
-          onChange={() => onChange}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement> ) => onChange(e)}
           className="w-full resize-none border-none bg-transparent text-lg font-medium text-gray-400 outline-none"
           placeholder="¡¿Qué está pasando!?"
         ></textarea>
