@@ -6,16 +6,18 @@ import {
 } from '@supabase/auth-helpers-nextjs';
 import { GitHubIcon } from '@/app/components/icons';
 import { useRouter } from 'next/navigation';
+import { SignInWithOAuthCredentials } from '@supabase/supabase-js';
 
 export function AuthButtonClient({ session }: { session: Session | null }) {
   const supabase = createClientComponentClient();
   const router = useRouter();
 
   const handleSignIn = async () => {
-    await supabase.auth.signInWithOAuth({
+    const options: SignInWithOAuthCredentials = {
       provider: 'github',
-      options: { redirectTo: `${process.env.NEXT_BASE_URL}/auth/callback` },
-    });
+      options: { redirectTo: `${window.location.origin}/auth/callback` },
+    };
+    await supabase.auth.signInWithOAuth(options);
   };
 
   const handleSignOut = async () => {
